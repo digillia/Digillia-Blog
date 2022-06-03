@@ -30,9 +30,5 @@ jobs:
 
       - name: Invalidate cloudfront distribution
         run: |
-          echo "CLOUDFRONT_ID=$(aws cloudfront list-distributions --query """DistributionList.Items[?Aliases.Items[0]=='www.digillia.com'].Id | [0]""" --output text)"
           echo "CLOUDFRONT_ID=$(aws cloudfront list-distributions --query """DistributionList.Items[?Aliases.Items[0]=='www.digillia.com'].Id | [0]""" --output text)" >> $GITHUB_ENV
-          echo "$CLOUDFRONT_ID"
-          echo "${{ env.CLOUDFRONT_ID }}"
-          echo "$GITHUB_ENV"
-          aws cloudfront create-invalidation --distribution-id "${{ env.CLOUDFRONT_ID }}" --paths "/*"
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
