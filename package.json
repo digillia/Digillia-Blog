@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build && next create",
+    "build": "next build && next export",
     "dev": "next -p 3002",
     "start": "http-server ./out",
     "upgrade": "ncu -u && npm i"
