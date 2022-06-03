@@ -30,6 +30,7 @@ jobs:
 
       - name: Invalidate cloudfront distribution
         run: |
+          echo "CLOUDFRONT_ID=$(aws cloudfront list-distributions --query """DistributionList.Items[?Aliases.Items[0]=='www.digillia.com'].Id | [0]""" --output text)"
           echo "CLOUDFRONT_ID=$(aws cloudfront list-distributions --query """DistributionList.Items[?Aliases.Items[0]=='www.digillia.com'].Id | [0]""" --output text)" >> $GITHUB_ENV
           echo "$CLOUDFRONT_ID"
           echo "${{ env.CLOUDFRONT_ID }}"
