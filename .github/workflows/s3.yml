@@ -27,3 +27,9 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./out/ s3://digillia.test --delete
+
+      - name: Invalidate cloudfront distribution
+        run: |
+          CLOUDFRONT_ID = $(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[0]=='www.digillia.com'].Id | [0]" --output text)
+          echo $CLOUDFRONT_ID
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
