@@ -3,7 +3,7 @@
   "scripts": {
     "build": "next build && next export",
     "dev": "next -p 3002",
-    "liny": "echo Hello Lint!",
+    "lint": "echo Hello Lint!",
     "start": "http-server ./out",
     "test": "echo Hello Test!",
     "upgrade": "ncu -u && npm i"
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "jest": "^28.1.0",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24"
   }
