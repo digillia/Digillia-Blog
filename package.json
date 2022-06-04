@@ -3,7 +3,9 @@
   "scripts": {
     "build": "next build && next export",
     "dev": "next -p 3002",
+    "liny": "echo Hello Lint!",
     "start": "http-server ./out",
+    "test": "echo Hello Test!",
     "upgrade": "ncu -u && npm i"
   },
   "dependencies": {

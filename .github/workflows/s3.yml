@@ -1,12 +1,31 @@
-name: Upload Website
+name: Build and Deploy Static Website
 
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Build static web site
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
   deploy:
+    name: Deploy
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
