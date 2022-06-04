@@ -17,9 +17,11 @@
   ```
 */
 import { Fragment } from 'react'
+import Image from 'next/image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import loader from '../lib/loader';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -34,12 +36,14 @@ export default function NavBar() {
                         <div className="relative flex items-center justify-between h-16">
                             <div className="flex items-center px-2 lg:px-0">
                                 <div className="flex-shrink-0">
-                                    <img
+                                    <Image
+                                        loader={loader}
                                         className="block lg:hidden h-8 w-auto"
                                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                                         alt="Workflow"
                                     />
-                                    <img
+                                    <Image
+                                        loader={loader}
                                         className="hidden lg:block h-8 w-auto"
                                         src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                                         alt="Workflow"
@@ -117,7 +121,8 @@ export default function NavBar() {
                                         <div>
                                             <Menu.Button className="bg-gray-800 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                 <span className="sr-only">Open user menu</span>
-                                                <img
+                                                <Image
+                                                    loader={loader}
                                                     className="h-8 w-8 rounded-full"
                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                     alt=""
@@ -216,7 +221,8 @@ export default function NavBar() {
                         <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center px-5">
                                 <div className="flex-shrink-0">
-                                    <img
+                                    <Image
+                                        loader={loader}
                                         className="h-10 w-10 rounded-full"
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         alt=""
