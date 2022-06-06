@@ -1,11 +1,12 @@
 {
-  "private": true,
+  "name": "digillia.blog",
   "version": "0.0.1",
   "scripts": {
     "build": "next build",
     "dev": "next -p 3002",
     "export": "next build && next export",
     "lint": "next lint",
+    "patch": "npm version patch && git push --tags origin master",
     "start": "http-server ./out",
     "test": "jest --ci",
     "upgrade": "ncu -u && npm i"
