@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/solid'
+// import { ChevronRightIcon } from '@heroicons/react/solid'
 import Container from '../components/container'
 // import Intro from '../components/intro'
 import Layout from '../components/layout'
@@ -13,7 +13,7 @@ export default function Index() {
           <title>{CMS_NAME}</title>
         </Head>
         <Container>
-            <div className="relative bg-gray-800 overflow-hidden">
+            <div className="bg-gray-800 overflow-hidden">
                 <div className="mt-16 sm:mt-24">
                     <div className="mx-auto max-w-7xl">
                         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
