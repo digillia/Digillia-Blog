@@ -1,11 +1,16 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: ['./components/**/*.js', './pages/**/*.js'],
+  content: [
+    './components/**/*.js',
+    './pages/**/*.js'
+  ],
+  darkMode: 'class',
   plugins: [
     require('@tailwindcss/forms'),
   ],
   theme: {
+    /*
     extend: {
       boxShadow: {
         sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
@@ -37,5 +42,6 @@ module.exports = {
         28: '7rem',
       },
     },
+    */
   },
 }
